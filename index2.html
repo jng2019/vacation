@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/png" href="website icon.png"
+	<!--This is some text-->
+	<link rel="stylesheet" type="text/css" href="NavigationBar.css">
+<style>
+
+body {
+background-image: url("back.jpeg");
+}
+
+#content{
+font-size: 25px;
+margin-top: 55px;
+color: white;
+}
+
+#googleMap {
+margin-top:47px;
+}	
+({
+</style>
+</head>
+<body>
+<title>Vacation Locations</title>
+<ul>
+	<li><a class="active "href="index2.html">Best Locations?</a></li>
+	<li><a href="San Francisco.html">San Francisco</a></li>
+	<li><a href="NewYork.html">New York</a></li>
+	<li><a href="LosAngeles.html">Los Angeles</a></li>	
+</ul>
+
+<div id="googleMap" style="width:100%;height:550px;"></div>
+
+<script>
+function myMap() {
+//latitude and longitude of where the map is centered
+//how zoomed in the maps is
+//mapProp is a dictionary similar to how your css styles work
+var mapCenter = new google.maps.LatLng(37.7576171,-122.577683);
+
+var mapProp= {
+    center:mapCenter,
+    zoom:4,
+};
+
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var la = new google.maps.LatLng(34.0329521,-118.248727);
+
+var laMarker = new google.maps.Marker({
+position: la,
+icon: "la icon.png"
+});
+
+laMarker.setMap(map);
+
+var sf = new google.maps.LatLng(37.7576171,-122.577683);
+
+var sfMarker = new google.maps.Marker({
+position: sf,
+icon: "sf icon.png"
+});
+sfMarker.setMap(map);
+
+var ny = new google.maps.LatLng(40.724955,-74.278262);
+
+var nyMarker = new google.maps.Marker({
+position: ny,
+icon: "ny icon.png"
+});
+nyMarker.setMap(map);
+
+var myTrip = [la, sf, ny];
+var flightPath = new google.maps.Polyline({
+	path: myTrip,
+	strokeColor:"#0000FF",
+	strokeOpacity:0.8,
+	strokeWeight:2
+});
+flightPath.setMap(map);
+
+
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIuZtsqbEtbY9wRUtSsfGU-SHU_rWwGxI&callback=myMap"></script>
+
+<div id="content">
+	<p> Some great vacation locations are Los Angeles, San Francisco, and New York. All of these incredible locations are in the United States, although one location is located in the East Coast, and two are located on the west coast. These locations all have very different lifestyles although being in the same country. Los Angeles is known for Hollywood and its many great movies. San Francisco is known for the Golden Gate Bridge and its mixture of architecture. New York is known for its subways, and the Empire State Building.</p>
+	<img src="la.jpeg">
+	<img src="sf.jpeg">
+	<img src="ny.jpeg">
+	<img src="LA0.jpeg">
+	<img src="ny0.jpg" width="280" height="180">
+	<img src="sf0.jpg"width="280" height="180">
+</div>
+</body>
+</html>

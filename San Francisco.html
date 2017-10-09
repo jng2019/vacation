@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/png" href="website icon.png"
+	<!--This is some text-->
+	<link rel="stylesheet" type="text/css" href="NavigationBar.css">
+<style>
+
+body {
+background-image: url("back.jpeg");
+}
+
+#content{
+font-size: 25px;
+margin-top: 55px;
+color: white;
+}
+
+#googleMap {
+margin-top:47px;
+
+}	
+({
+
+</style>
+</head>
+<body>
+<title>San Francisco</title>
+<ul>
+	<li><a href="index2.html">Best Locations?</a></li>
+	<li><a class="active" href="San Francisco.html">San Francisco</a></li>
+	<li><a href="NewYork.html">New York</a></li>
+	<li><a href="LosAngeles.html">Los Angeles</a></li>
+</ul>
+
+<div id="googleMap" style="width:100%;height:550px;"></div>
+
+<script>
+function myMap() {
+//latitude and longitude of where the map is centered
+//how zoomed in the maps is
+//mapProp is a dictionary similar to how your css styles work
+var mapCenter = new google.maps.LatLng(37.7576171,-122.577683);
+
+var mapProp= {
+    center:mapCenter,
+    zoom:6,
+}
+
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var la = new google.maps.LatLng(34.0329521,-118.248727);
+
+var laMarker = new google.maps.Marker({
+position: la,
+icon: "la icon.png"
+});
+
+laMarker.setMap(map);
+
+var sf = new google.maps.LatLng(37.7576171,-122.577683);
+
+var sfMarker = new google.maps.Marker({
+position: sf,
+animation: google.maps.Animation.BOUNCE,
+icon: "sf icon.png"
+});
+sfMarker.setMap(map);
+
+var ny = new google.maps.LatLng(40.724955,-74.278262);
+
+var nyMarker = new google.maps.Marker({
+position: ny,
+icon: "ny icon.png"
+});
+nyMarker.setMap(map);
+
+var myTrip = [la, sf, ny];
+var flightPath = new google.maps.Polyline({
+	path: myTrip,
+	strokeColor:"#0000FF",
+	strokeOpacity:0.8,
+	strokeWeight:2
+});
+flightPath.setMap(map);
+
+
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIuZtsqbEtbY9wRUtSsfGU-SHU_rWwGxI&callback=myMap"></script>
+
+<div id="content">
+<p>San Francisco, is the cultural, commercial, and financial center of Northern California. The consolidated city-county covers an area of about 47.9 square miles at the north end of the San Francisco Peninsula in the San Francisco Bay Area. It is the fourth-most populous city in California, and the 13th-most populous in the United States, with a 2016 census-estimated population of 870,887. The population is projected to reach 1 million by 2033. A popular tourist destination, San Francisco is known for its cool summers, fog, steep rolling hills, eclectic mix of architecture, and landmarks, including the Golden Gate Bridge, cable cars, the former Alcatraz Federal Penitentiary, Fisherman's Wharf, and its Chinatown district.</p>
+	<img src="sf.jpeg">
+	<img src="sf2.jpeg">
+	<img src="sf3.jpeg">
+	<img src="sf4.jpeg">
+	<img src="sf5.jpeg">
+	<img src="sf6.jpg" width="280" height="180">
+</div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width:200;
+	background-color:#a8b3c1;
+	overflow: hidden;
+}
+
+ul {
+	position: fixed;
+	top: 0;
+	width:100%;
+}
+
+li {
+	float: left;
+}
+li a {
+	display: block;
+	color:black;
+	padding:14px 18px;
+	text-align: center;
+	text-decoration:none;
+	font-weight: bold;
+	}
+
+li a:hover:not(.active){
+	color: white;
+	background-color:#555;
+
+}
+
+li a:hover {
+	padding:14px 18px;
+	font-size: 15px;
+}
+
+.active {
+	background-color: green;
+	color: white;
+}
+
+<!-- This is the Navigation Bar, (took forever!!)-->
